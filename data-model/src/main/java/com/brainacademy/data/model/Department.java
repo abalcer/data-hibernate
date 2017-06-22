@@ -1,5 +1,7 @@
 package com.brainacademy.data.model;
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -32,20 +34,20 @@ public class Department {
         this.name = name;
     }
 
-//    @Override
-//    public boolean equals(Object o) {
-//        if (this == o) {
-//            return true;
-//        }
-//        if (!(o instanceof Department)) {
-//            return false;
-//        }
-//        Department that = (Department) o;
-//        return Objects.equals(number, that.number);
-//    }
-//
-//    @Override
-//    public int hashCode() {
-//        return Objects.hash(number);
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Department)) {
+            return false;
+        }
+        Department that = (Department) o;
+        return Objects.equals(number, that.number);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(number);
+    }
 }

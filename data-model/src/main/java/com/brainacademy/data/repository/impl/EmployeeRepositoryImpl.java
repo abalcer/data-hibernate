@@ -48,7 +48,7 @@ public class EmployeeRepositoryImpl
                     .setParameter("departmentNumber", departmentNumber)
                     .uniqueResult();
 
-            List<Employee> employees = session.createQuery(FIND_BY_DEPARTMENT_QUERY, Employee.class)
+            List<Employee> employees = session.createQuery("select e " + FIND_BY_DEPARTMENT_QUERY, Employee.class)
                     .setParameter("departmentNumber", departmentNumber)
                     .setFirstResult(pageable.getPageNumber())
                     .setMaxResults(pageable.getPageSize())
@@ -66,7 +66,7 @@ public class EmployeeRepositoryImpl
                     .setParameter("name", name)
                     .uniqueResult();
 
-            List<Employee> employees = session.createQuery(FIND_EMPLOYEE_QUERY, Employee.class)
+            List<Employee> employees = session.createQuery("select e " + FIND_EMPLOYEE_QUERY, Employee.class)
                     .setParameter("departmentNumber", departmentNumber)
                     .setParameter("name", name)
                     .setFirstResult(pageable.getPageNumber())
@@ -86,7 +86,7 @@ public class EmployeeRepositoryImpl
                     .setParameter("lastName", lastName)
                     .uniqueResult();
 
-            List<Employee> employees = session.createQuery(FIND_EMPLOYEES_BY_NAME_QUERY, Employee.class)
+            List<Employee> employees = session.createQuery("select e " + FIND_EMPLOYEES_BY_NAME_QUERY, Employee.class)
                     .setParameter("departmentNumber", departmentNumber)
                     .setParameter("firstName", firstName)
                     .setParameter("lastName", lastName)
