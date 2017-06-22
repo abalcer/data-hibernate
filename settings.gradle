@@ -1,0 +1,4 @@
+rootProject.name = 'data-hibernate'
+include 'data-model'
+include 'data-swing-ui'
+
